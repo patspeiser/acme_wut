@@ -11,7 +11,6 @@ Promise.all([
 .then(
 	function(success){
 		app.listen(process.env.PORT, function(){
-			console.log(Models);
 			console.log(chalk.blue('LISTENING ON PORT: ' + process.env.PORT));
 		})
 	},

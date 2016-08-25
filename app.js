@@ -2,6 +2,9 @@ var express = require('express');
 var app = express();
 var swig = require('swig');
 var chalk = require('chalk');
+var GoogleMaps = require('googlemaps');
+var Map = require('./models/maps')
+
 swig.setDefaults({ cached: false});
 
 app.engine('html', swig.renderFile);
@@ -11,8 +14,7 @@ app.use(express.static(__dirname + '/node_modules/'));
 
 // root 
 app.get('/', function(req, res){
-	//console.log(chalk.blue('/'));
-	res.send('/')
+	res.render('index');
 });
 
 module.exports = app;

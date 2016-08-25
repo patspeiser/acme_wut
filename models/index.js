@@ -1,5 +1,8 @@
 var Sequelize = require('sequelize');
-var db = new Sequelize(process.env.CONN);
+var db = new Sequelize(process.env.CONN, {
+	dialect: 'postgres',
+	port: 5432
+});
 
 var User = db.define('user', {
 	name: Sequelize.STRING
@@ -14,6 +17,7 @@ var Location = db.define('location', {
 })
 
 module.exports = {
+	DB: db,
 	User: User,
 	Class: Class,
 	Location: Location
