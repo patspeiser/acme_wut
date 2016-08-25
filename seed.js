@@ -1,7 +1,15 @@
-
+var Promise = require('bluebird');
 var URL = 'postgres://postgres@localhost:5432/pat';
 var Sequelize = require('sequelize');
 var _db = new Sequelize(URL);
+var chalk = require('chalk');
+//var Players = require('./models').Players;
+
+var Player = _db.define('player',{
+	name: Sequelize.STRING,
+	location: Sequelize.ARRAY(Sequelize.FLOAT),
+	class: Sequelize.STRING
+})
 
 var Faker = require('Faker');
 
@@ -11,7 +19,7 @@ var CreateUser = function(userName, userLocation, userClass){
 		this.class = userClass
 }
 
-var userClasses = ['spy', 'explorer', 'security', 'captain', 'bounty_hunter'];
+var userClasses = ['spy', 'explorer', 'enforcer', 'captain', 'bounty_hunter'];
 
 var getRandomClass = function(){
 	return userClasses[Math.floor(Math.random() * userClasses.length)]
@@ -31,4 +39,3 @@ for (var i = 0; i < 100; i++){
 	people.push(new CreateUser(getRandomName(), getRandomLocation(), getRandomClass()));
 }
 
-console.log(people)
