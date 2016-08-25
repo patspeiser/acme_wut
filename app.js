@@ -17,4 +17,5 @@ app.get('/', function(req, res){
 	res.render('index');
 });
 
+//export app to mount on server
 module.exports = app;

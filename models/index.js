@@ -1,9 +1,8 @@
 var Promise = require('bluebird');
 var URL = 'postgres://postgres@localhost:5432/pat';
 var Sequelize = require('sequelize');
-var _db = new Sequelize(URL);
+var _db = new Sequelize(URL, {logging: false});
 var chalk = require('chalk');
-//var Players = require('./models').Players;
 
 var Player = _db.define('player',{
 	name: Sequelize.STRING,
