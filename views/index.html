@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  </head>
+{% extends './layout.html' %}
 
-  <body>
-  </body>
-</html>
+{% block content %}
+<div class='container'>
+  <form method='GET' action='/test'>
+    <button class='btn btn-primary' type='submit'> Click here </button>
+    </form>
+</div>
+{% endblock %}
