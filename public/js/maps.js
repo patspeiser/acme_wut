@@ -16,11 +16,13 @@ $(function initializeMap (){
     styles: styleArr
   });
 
+
   var iconURLs = {
-    hotel: '/images/lodging_0star.png',
-    restaurant: '/images/restaurant.png',
-    activity: '/images/star-3.png'
+    hotel: '/images/bluecircle.png',
+    restaurant: '/images/bluecircle.png',
+    activity: '/images/bluecircle.png'
   };
+
 
   function drawMarker (type, coords) {
     var latLng = new google.maps.LatLng(coords[0], coords[1]);
