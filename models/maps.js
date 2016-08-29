@@ -1,12 +1,24 @@
-var GoogleMaps = require('googlemaps');
-var gmAPI = new GoogleMaps();
+function initialize_gmaps(){
+	var myLatlng = new google.map.Latlng(40, -74);
+	var mapOptions = {
+		center: myLatlng,
+		zoom: 15,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
 
-var params = {
-	center: '1585 1st avenue NY',
-	zoom: 100,
-	size: '600x600',
-	maptype: 'roadmap'
+	var map_canvas_obj = document.getElementById('map-canvas');
+	var map = new google.maps.Map(map_canvas_obj, mapOptions);
+
+	var marker = new google.maps.Marker({
+		position: myLatlng,
+		title: "Test Title"
+	});
+
+	marker.setMap(map);
 }
 
-module.exports = {
-}
+/*
+$(document).ready(function(){
+	initialize_gmaps();
+})
+*/

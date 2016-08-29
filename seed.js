@@ -3,7 +3,6 @@ var URL = 'postgres://postgres@localhost:5432/pat';
 var Sequelize = require('sequelize');
 var _db = new Sequelize(URL);
 var chalk = require('chalk');
-//var Players = require('./models').Players;
 
 var Player = _db.define('player',{
 	name: Sequelize.STRING,
