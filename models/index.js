@@ -1,16 +1,16 @@
 var Promise = require('bluebird');
 var URL = 'postgres://postgres@localhost:5432/pat';
 var Sequelize = require('sequelize');
-var _db = new Sequelize(URL, {logging: false});
+var _db = new Sequelize(URL, { logging: false});
 var chalk = require('chalk');
 
-var Player = _db.define('player',{
+var Player = _db.define('players',{
 	name: Sequelize.STRING,
 	location: Sequelize.ARRAY(Sequelize.FLOAT),
 	class: Sequelize.STRING
 })
 
-var Faker = require('Faker');
+var Faker = require('faker');
 
 var CreateUser = function(userName, userLocation, userClass){
 		this.name = userName,

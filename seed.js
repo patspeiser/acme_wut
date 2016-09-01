@@ -29,7 +29,7 @@ var getRandomName = function(){
 }
 
 var getRandomLocation = function(){
-	return [Math.floor(Math.random() * 500), Math.floor(Math.random() * 500)]
+	return [Math.random() * 500, Math.random() * 500]
 }
 
 var people = [];

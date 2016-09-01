@@ -14,5 +14,10 @@
     <button class='btn btn-primary' type='submit'> Click here </button>
     </form>
 </div>
+<script>
+	{% autoescape false %}
+	var mappedPlayers = {{ players | json }}
+	{% endautoescape %}
+</script>
 
 {% endblock %}
